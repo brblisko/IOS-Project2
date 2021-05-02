@@ -7,4 +7,4 @@ semaphore: main.c
 	gcc -c main.c
 
 clean:
-	rm -rf main.o proj2
+	rm -rf main.o proj2 proj2.out
