@@ -70,7 +70,7 @@ int main(int argc, char **argv)
     if (file == NULL)
     {
         fprintf(stderr, "ERROR - couldn't open file \"proj2.out\"");
-        return 0;
+        return 1;
     }
 
     sem_t *mainSem = mmap(NULL, sizeof(sem_t), PROT_READ | PROT_WRITE, MAP_SHARED | MAP_ANONYMOUS, -1, 0);
@@ -312,6 +312,7 @@ void my_print(shared *SM, FILE *file, const char *format, ...)
 
     va_end(args);
 }
+
 void memClean(shared *SM, FILE *file)
 {
     fclose(file);
